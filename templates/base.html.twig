@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Nathalie Vrecq - Codevea">
+		<meta name="copyright" content="© 2025 Nathalie Vrecq - Codevea"> {% block stylesheets %}{% endblock %}
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+		<link href="https://fonts.googleapis.com/css2?family=Bentham&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+		<title>
+			{% block title %}Portfolio BTS SIO | Nathalie Vrecq
+			{% endblock %}
+		</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="{{ path("app_home") }}site.webmanifest">
+	</head>
+
+	<body>
+		<header class="header">
+			<picture>
+				<source media="(min-width:1024px)" srcset="{{asset('pictures/header-large.webp')}}">
+				<source media="(min-width:800px)" srcset="{{asset('pictures/header-medium.webp')}}">
+				<img src="{{asset('pictures/header-small.webp')}}" alt="Représentant une impression mosaïque du profil d'une femme.">
+			</picture>
+			<div class="textCenter">
+				<img src="{{asset('pictures/image.webp')}}" alt="Représente la tête d'une femme avec une impression mosaïque réalisée avec le logiciel GIMP." class="imageHeader">
+
+				<div>
+					<h1>{{setting.firstname|default('')}}
+						{{setting.lastname|default('')}}
+						{{setting.title|default('')}}</h1>
+					<h2>{{setting.subtitle|default('')}}</h2>
+					<p>
+						<a href="https://github.com/codevea/portfolio-nathalie-vrecq" target="_blank">{{ ux_icon('codicon:github', {height: '15px', width: '15px'} ) }}
+							&nbsp; Dépôt GitHub Portfolio</a>
+					</p>
+				</div>
+
+			</div>
+		</header>
+
+		<nav class="nav">
+			<a class="ico" class="navCompany {{ app.current_route == 'app_home' ? 'active' : '' }}" href="{{ path('app_home') }}">
+				&nbsp;
+				{{ ux_icon('bytesize:portfolio', {width:'18px', height:'18px'}) }}
+				&nbsp;  Portfolio BTS SIO</a>
+			<div class="navContainer">
+				<div class="navListContainer" tabindex="0">
+					<ul class="navMenu" id="navmenu">
+						<li>
+							<a class="{{ app.current_route == 'app_home' ? 'active' : '' }}" href="{{ path('app_home') }}#aPropos">A propos</a>
+						</li>
+						<li>
+							<a class="{{ app.current_route == 'app_project' ? 'active' : '' }}" href="{{ path('app_project') }}">Realisations</a>
+						</li>
+						<li>
+							<a class="{{ app.current_route == 'app_home' ? 'active' : '' }}" href="{{ path('app_home') }}#parcours">Parcours</a>
+						</li>
+						<li>
+							<a class="{{ app.current_route == 'app_home' ? 'active' : '' }}" href="{{ path('app_home') }}#competences">Compétences
+							</a>
+						</li>
+						<li>
+							<a class="{{ app.current_route == 'app_monitoring' ? 'active' : '' }}" href="{{ path('app_monitoring') }}">Veille</a>
+						</li>
+						<li>
+							<a class="{{ app.current_route == 'app_home' ? 'active' : '' }}" href="{{ path('app_home') }}#contact">Contact</a>
+						</li>
+					</ul>
+					<a id="hamburger" href="#!" title="menu" class="navHamburger">{{ ux_icon('game-icons:hamburger-menu', {height: '32px', width: '32px'}) }}</a>
+				</div>
+				<a href="#!" title="close menu" class="navHamburgerclose">{{ ux_icon('ep:close-bold', {height: '32px', width: '32px'}) }}</a>
+			</div>
+		</nav>
+
+		<article>
+			<h2 class="TextEndColorOr">Portfolio |
+				{{setting.lastname|default('')}}
+				{{setting.firstname|default('')}}</h2>
+			{% include './_partials/_flash.html.twig' %}
+			{% block body %}{% endblock %}
+		</article>
+
+		<footer>
+			<div class="containerFooter">
+				<div>
+					<p>
+						Copyright
+						{{ ux_icon('solar:copyright-linear', {height: '18px', width: '18px'}) }}
+						&nbsp;
+						{{setting.copyright|default('') }}
+					</p>
+					<p>
+						{{ ux_icon('simple-icons:symfony', {height: '18px', width: '18px'}) }}
+						&nbsp;
+						{{setting.technology|default('')}}
+					</p>
+					<p>
+						Version
+						{{setting.version|default('')}}
+					</p>
+				</div>
+
+				<div>
+					<p>
+						{{ ux_icon('ph:link-duotone', {height: '18px', width: '18px'}) }}
+						<a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fwww.portfolio-nathalie-vrecq.codevea.com%2F" target="_blank">W3C Validator</a><br>
+					</p>
+					<p>
+						<a href="https://github.com/codevea/portfolio-nathalie-vrecq" target="_blank">{{ ux_icon('codicon:github', {height: '15px', width: '15px'} ) }}
+							&nbsp; Dépôt GitHub Portfolio</a>
+					</p>
+					<p>
+						<span id="typedText"></span>
+					</p>
+				</div>
+
+			</div>
+		</footer>
+
+	</body>
+</html>

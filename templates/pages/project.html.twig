@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title "Portfolio Nathalie Vrecq | Réalisations et projets" %}
+
+{% block body %}
+	<section class="sectionBlack">
+		<div class="containerCardProject">
+
+		{% for category in categories %}
+			<h2 class="ico">{{ ux_icon('carbon:cics-program', {height: '22px', width: '22px'}) }}
+						&nbsp; {{category.name}}</h2>
+					<div class="containerFlip">
+						{% for project in projects %}
+							{% if project.category == category.name  %}
+								{% include './_partials/_projectCategory.html.twig' %}
+							{% endif %}
+						{% endfor %}
+					</div>
+		{% endfor %}
+
+		</div>
+	</section>
+{% endblock %}

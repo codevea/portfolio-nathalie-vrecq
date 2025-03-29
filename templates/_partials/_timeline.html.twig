@@ -1,0 +1,26 @@
+<div class="containerTimeLine">
+	<div class="boxTimeline"></div>
+	<div class="boxTimeline">
+		<ul>
+			{% for timeline in timelines %}
+				<li>
+					<div>
+						<p class="titleTimeline">
+							<a href="{{ timeline.imageUrl }}" target="_blank">
+							<picture class="scale">
+								<source srcset="{{ vich_uploader_asset(timeline, 'imageFile') | imagine_filter('badge_webp') }}" type="image/webp">
+								<source srcset="{{ vich_uploader_asset(timeline, 'imageFile') | imagine_filter('badge_jpeg') }}" type="image/jpeg">
+								<img src="{{ vich_uploader_asset(timeline, 'imageFile') | imagine_filter('badge_webp') }}" alt="{{timeline.title}}">
+							</picture>
+							</a>
+							<span class="time">{{ timeline.date|date("d/m/Y", "Europe/Paris") }}</span>
+						</p>
+						<p class="lineBarreDeux"></p>
+						<h3>{{ timeline.title }}</h3>
+						<p class="contentTimeline">{{ timeline.content }}</p>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

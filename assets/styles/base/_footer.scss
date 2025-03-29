@@ -1,0 +1,39 @@
+@import "../params/_variables.scss";
+
+.containerFooter {
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-evenly;
+  text-align     : center;
+  align-items    : stretch;
+  color          : $white;
+  font-size      : medium;
+  font-weight    : bold;
+  padding        : 5rem 0;
+  width          : 100%;
+  margin         : auto;
+  flex-wrap      : wrap;
+
+
+  @media screen and (min-width: 900px) {
+    flex-wrap: nowrap;
+  }
+
+  div {
+    padding            : 1rem;
+    border             : $transparent_black_light 6px solid;
+    box-shadow         : $box_shadow;
+    background-image   : url("/pictures/footer.webp");
+    background-repeat  : repeat;
+    background-position: bottom;
+    opacity            : 0.9;
+    border-radius      : 2px;
+    width              : 90%;
+    min-height         : 150px;
+    margin             : 0.5rem;
+
+    @media screen and (min-width: 900px) {
+      width: 40%;
+    }
+  }
+}

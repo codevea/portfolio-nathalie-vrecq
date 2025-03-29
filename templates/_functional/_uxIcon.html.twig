@@ -1,0 +1,42 @@
+{% set value = monitoring.uxicon %}
+
+{% if value == 'icon-voyage' %}
+    {{ ux_icon('icon-park:journey', {height: '20px', width: '20px'})}}
+
+{% elseif value == 'icone-information' %}
+	{{ ux_icon('akar-icons:info-fill', {height: '20px', width: '20px'})}}
+
+{% elseif value == "icone-live-journal" %}
+  {{ ux_icon('simple-icons:livejournal', {height: '20px', width: '20px'})}}
+
+{% elseif value == "icone-video-tutoriels-et-formations" %}
+  {{ ux_icon('mdi:cast-tutorial', {height: '20px', width: '20px'})}}
+
+{% elseif value == "icone-symfony" %}
+  {{ ux_icon('fa6-brands:symfony', {height: '20px', width: '20px'})}}
+
+{% elseif value == "icone-github" %}
+  {{ ux_icon('akar-icons:github-fill', {height: '20px', width: '20px'})}}
+
+{% elseif value == "icone-mathematique" %}
+  {{ ux_icon('mynaui:math-solid', {height: '20px', width: '20px'})}}
+
+{% elseif value == "icone-mooc-et-formations-numeriques" %}
+  {{ ux_icon('fa6-solid:chalkboard-user', {height: '20px', width: '20px'})}}
+
+{% elseif value == "icone-vite-outil-de-construction-frontend" %}
+  {{ ux_icon('file-icons:vite', {height: '20px', width: '20px'})}}
+
+{% elseif value == "icone-vite-outil-de-construction-frontend" %}
+  {{ ux_icon('mingcute:code-fill', {height: '20px', width: '20px'})}}
+
+{% elseif value == "icone-securite-generale" %}
+  {{ ux_icon('ic:outline-security', {height: '20px', width: '20px'})}}
+
+{% elseif value == "icone-donnee-personnelle" %}
+  {{ ux_icon('simple-icons:cyberdefenders', {height: '20px', width: '20px'})}}
+
+{% elseif value == "icone-code-et-programmation" %}
+  {{ ux_icon('tabler:code', {height: '20px', width: '20px'})}}
+
+{% endif %} 

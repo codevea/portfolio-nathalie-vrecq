@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block title "Portfoli Nathalie Vrecq | Veille et technologie" %}
+
+{% block body %}
+	<section class="sectionBlack" id="veille">
+		<h2 class="ico">{{ ux_icon('mdi:planet', {height: '20px', width: '20px'}) }}
+			&nbsp; &nbsp;Veille et technologie</h2>
+
+		<div class="containerMonitoring">
+
+			<div>
+				<h3>{{ ux_icon('streamline:annoncement-megaphone', {height: '20px', width: '20px'}) }}
+					&nbsp; &nbsp;  Actualitées Informatiques et générales</h3>
+
+				{% for monitoring in monitorings %}
+					{% if monitoring.category == "actualites-informatiques-et-generales" %}
+						{% include './_partials/_monitoringCard.html.twig' %}
+					{% endif %}
+				{% endfor %}
+			</div>
+
+			<div>
+				<h3>{{ ux_icon('mdi:cast-tutorial', {height: '20px', width: '20px'}) }}
+					&nbsp; &nbsp;  Sources d'inspiration: formation, tutoriel et resources</h3>
+
+				{% for monitoring in monitorings %}
+					{% if monitoring.category == "sources-d-inspiration-formation-tutoriel-et-resources" %}
+						{% include './_partials/_monitoringCard.html.twig' %}
+					{% endif %}
+				{% endfor %}
+			</div>
+
+			<div>
+				<h3>{{ ux_icon('mdi:legal', {height: '20px', width: '20px'}) }}
+					&nbsp; &nbsp; Reglementations, droits et protection</h3>
+
+				{% for monitoring in monitorings %}
+					{% if monitoring.category == "reglementations-droits-et-protection" %}
+						{% include './_partials/_monitoringCard.html.twig' %}
+					{% endif %}
+				{% endfor %}
+			</div>
+
+			<div>
+				<h3>{{ ux_icon('iconoir:tools', {height: '20px', width: '20px'}) }}
+					&nbsp; &nbsp; Thécnologies et outils</h3>
+
+				{% for monitoring in monitorings %}
+					{% if monitoring.category == "thecnologies-et-outils" %}
+						{% include './_partials/_monitoringCard.html.twig' %}
+					{% endif %}
+				{% endfor %}
+			</div>
+
+		</div>
+	</section>
+{% endblock %}

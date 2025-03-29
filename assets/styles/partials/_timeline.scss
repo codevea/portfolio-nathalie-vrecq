@@ -1,0 +1,119 @@
+@import "../params/variables.scss";
+
+.containerTimeLine {
+	width          : 100%;
+	margin         : 0 auto;
+	padding        : 0 0 5rem 0;
+	display        : flex;
+	justify-content: center;
+	flex-direction : column;
+	align-items    : center;
+	text-align     : center;
+
+	.contentTimeline {
+		text-align: left;
+	}
+
+	ul li.in-view::after {
+		background-color: $blue_pencil;
+		border          : 2px solid $salmon;
+	}
+
+	.boxTimeline {
+		width: 90%;
+	}
+
+	ul {
+		display        : flex;
+		justify-content: end;
+		flex-direction : column;
+		width          : 100%;
+		margin         : 5rem 0;
+		border-left    : 3px $salmon solid;
+
+		li>div {
+			width           : 90%;
+			height          : auto;
+			margin          : 0 2rem;
+			padding         : 0 0 1rem 0;
+			background-color: $white;
+
+			h3 {
+				padding: 1rem;
+			}
+
+			.titleTimeline {
+				display       : flex;
+				flex-direction: row;
+				align-items   : center;
+
+
+				img {
+					padding: 0 1rem;
+					width  : 70px;
+					height : auto;
+					opacity: 0.9;
+				}
+
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	.containerTimeLine {
+		flex-direction: row;
+
+		.boxTimeline {
+			width: 45%;
+		}
+
+		li {
+			position: relative;
+			display : block;
+
+			&::after {
+				content          : '';
+				position         : absolute;
+				left             : 0%;
+				top              : 45px;
+				transform        : translateX(-55%);
+				-webkit-transform: translateX(-55%);
+				width            : 30px;
+				height           : 30px;
+				border-radius    : 50%;
+				background-color : $salmon;
+				border           : 2px solid $white;
+			}
+
+			&::before {
+				content          : '';
+				position         : absolute;
+				left             : 0%;
+				bottom           : 5px;
+				transform        : translateX(-55%);
+				-webkit-transform: translateX(-55%);
+				width            : 30px;
+				height           : 30px;
+				border-radius    : 50%;
+				background-color : $white_inter;
+				border           : 2px solid $white;
+			}
+
+			&:last-of-type::after {
+				background-color: $white;
+			}
+		}
+
+		li:nth-child(even) div {
+			position        : absolute;
+			left            : -100%;
+			top             : -80px;
+			background-color: $white;
+
+			.titleTimeline {
+				flex-direction: row-reverse;
+			}
+		}
+	}
+}

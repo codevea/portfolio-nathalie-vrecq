@@ -1,0 +1,39 @@
+<div class="sectionSkills ">
+	<div class="containerLeft">
+		<div class="containerSkills ">
+
+			{% for skill in skills %}
+				{% if skill.category == 'ProgrammingAndMarkupLanguages' %}
+					{% include './_partials/_skillsCategory.html.twig' %}
+				{% endif %}
+			{% endfor %}
+			<hr class="spaceSkills">
+			{% for skill in skills %}
+				{% if skill.category == 'DevelopmentToolsAndEnvironments' %}
+					{% include './_partials/_skillsCategory.html.twig' %}
+				{% endif %}
+			{% endfor %}
+			<hr class="spaceSkills">
+			{% for skill in skills %}
+				{% if skill.category == 'DesignAndVisualCreation' %}
+					{% include './_partials/_skillsCategory.html.twig' %}
+				{% endif %}
+			{% endfor %}
+			<hr class="spaceSkills">
+			{% for skill in skills %}
+				{% if skill.category == 'FileTransferAndManagementTools' %}
+					{% include './_partials/_skillsCategory.html.twig' %}
+				{% endif %}
+			{% endfor %}
+
+		</div>
+		<div class="textSkills">
+			{{setting.messageskills|default('')|raw }}
+		</div>
+	</div>
+
+	<div class="containerRight">
+		<img src="{{asset('pictures/graph-competences.webp')}}" alt="Graphisme avec logo des compétences.">
+	</div>
+
+</div>

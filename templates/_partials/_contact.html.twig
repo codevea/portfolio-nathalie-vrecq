@@ -1,0 +1,30 @@
+<div class="containerContact">
+	<div class="containerFormContact">
+		<p>{{setting.firstname|default('')}}
+			{{setting.lastname|default('')}}</p>
+		<p>
+			{{ ux_icon('ph:map-pin-duotone', {height: '18px', width: '18px'} ) }}
+			&nbsp;
+			{{setting.address|default('')}}<br>
+			{{setting.province|default('')}}
+		</p>
+		<p>
+			{{ ux_icon('ph:device-mobile-duotone', {height: '18px', width: '18px'}) }}
+			&nbsp;
+			<a href="tel:+33{{setting.mobile|default('')}}">{{setting.mobile|default('')}}</a>
+			<br>
+			{{ ux_icon('ph:phone-duotone' , {height: '18px', width: '18px'}) }}
+			&nbsp;
+			<a href="tel:+33{{setting.mobile|default('')}}">{{setting.phone|default('')}}</a>
+		</p>
+		<p class="ico">
+			{{ ux_icon('ph:envelope-duotone', {height: '18px', width: '18px'}) }}
+			&nbsp;
+			<a href="https://www.codevea.com/formulaire-de-contact-de-codevea/nous-contacter" target="_blank">Contact e-mail</a>
+		</p>
+	</div>
+
+	<div class="containerInformationContact">
+		<img src="{{asset('pictures/contact.webp')}}" alt="Représente un vieux ordinateur imagé avec un effet d'impression mosaïque réalisé avec le logiciel GIMP.">
+	</div>
+</div>

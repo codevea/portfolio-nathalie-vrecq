@@ -1,0 +1,40 @@
+# Documentation on how to configure the bundle can be found at: https://symfony.com/doc/current/bundles/LiipImagineBundle/basic-usage.html
+liip_imagine:
+    resolvers:
+        default:
+            web_path: ~
+    # valid drivers options include "gd" or "gmagick" or "imagick"
+    driver: "gd"
+    twig:
+        mode: lazy
+    webp:
+        generate: true
+    filter_sets:
+        badge_jpeg:
+            format: 'jpeg'
+            quality: 100
+            filters:
+                thumbnail: { size: [80, 100], mode: scale }
+        badge_webp:
+            format: 'webp'
+            quality: 100
+            filters:
+                thumbnail: { size: [80, 100], mode: scale }
+        card_jpeg:
+            format: 'jpeg'
+            quality: 100
+            filters:
+                thumbnail: { size: [430, 430], mode: scale }
+                watermark_image:
+                    image: public/pictures/watermark.webp
+                    size: 0.08
+                    position: bottomright
+        card_webp:
+            format: 'webp'
+            quality: 100
+            filters:
+                thumbnail: { size: [430, 430], mode: scale }
+                watermark_image:
+                    image: public/pictures/watermark.webp
+                    size: 0.08
+                    position: bottomright

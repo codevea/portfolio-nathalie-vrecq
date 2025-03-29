@@ -1,0 +1,36 @@
+@import "../params/variables.scss";
+
+section.error {
+  padding   : 2rem;
+  text-align: center;
+
+  .containerError {
+    display        : flex;
+    flex-direction : row;
+    align-content  : space-between;
+    align-items    : center;
+    justify-content: stretch;
+    width          : 100%;
+    margin         : 0 auto;
+
+    div {
+      width: 50%;
+    }
+
+    img {
+      border-radius: 50% 50% 50% 60%;
+      padding      : 2rem;
+      margin       : 0 auto;
+    }
+  }
+}
+
+button.error {
+  max-width: 40%;
+  padding  : 0.5rem;
+  margin   : 0 auto;
+
+  a {
+    color: $black;
+  }
+}

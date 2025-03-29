@@ -1,0 +1,42 @@
+@import "../params/_variables.scss";
+
+.containerMonitoring {
+  width          : 100%;
+  display        : flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items    : stretch;
+  flex-wrap      : wrap;
+  margin         : 0 auto;
+  padding        : 3rem 0;
+  font-size      : 0.9em;
+
+  h3 {
+    color: $blue_light
+  }
+
+  div {
+    width  : 100%;
+    padding: 0.5rem;
+    margin : 0.5rem;
+  }
+
+  .cardMonitoring {
+    margin          : 0.5rem auto;
+    padding         : 2.5rem;
+    width           : 90%;
+    background-color: $transparent_violet;
+  }
+}
+
+
+
+@media (min-width: 950px) {  
+  .containerMonitoring {
+    flex-direction: row;
+  }
+  .containerMonitoring>div {
+    width  :45%;
+    padding: 1rem;
+  }
+}

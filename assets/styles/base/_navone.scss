@@ -1,0 +1,135 @@
+@import "../params/_variables.scss";
+
+.nav {
+  display         : flex;
+  justify-content : space-between;
+  align-items     : center;
+  position        : fixed;
+  width           : 100%;
+  z-index         : 5;
+  padding         : 1rem;
+  left            : 0;
+  right           : 0;
+  top             : 0;
+  background-color: $transparent_black_dark;
+  color : $white_inter;
+  text-shadow: $text-shadow;
+  border-bottom   : $border_navone;
+  max-width       : 1600px;
+  margin          : 0 auto;
+  padding         : 1rem 0;
+
+  ul {
+    padding: 0 1rem;
+  }
+
+  li {
+    padding       : 2px;
+    margin        : 0.5em;
+    text-transform: uppercase;
+    list-style    : none;
+    font-size     : medium;
+    font-weight   : 300;
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.navCompany {
+  text-decoration: none;
+  color          : inherit;
+  font-size      : medium;
+  text-transform : uppercase;
+  padding        : 0 1rem;
+}
+
+.navContainer {
+  position: relative;
+}
+
+.navHamburger {
+  color     : $white_inter;
+  display   : none;
+  padding   : 0.4rem 1.6rem 0 0;
+
+  &:hover {
+    text-decoration: none;
+    transition     : none;
+  }
+}
+
+.navHamburgerclose {
+  color     : $white_inter;
+  position  : absolute;
+  top       : 0;
+  transition: opacity 150ms linear;
+  display   : none;
+  z-index   : -1;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.navMenu {
+  padding   : 0;
+  margin    : 0;
+  list-style: none;
+  display   : flex;
+  flex-wrap : wrap;
+}
+
+@media (max-width: 900px) {
+  .navHamburger {
+    display: flex;
+    opacity: 1;
+  }
+
+  .navMenu {
+    opacity        : 0;
+    position       : fixed;
+    visibility     : none;
+    top            : -1000px;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    box-shadow     : $box_shadow;
+    border         : $border_navone;
+    border-radius  : 10px 0 3px 3px;
+  }
+
+  .navListContainer:focus .navMenu,
+  .navListContainer:focus-within .navMenu {
+    position   : absolute;
+    visibility : visible;
+    opacity    : 1;
+    top        : 2rem;
+    right      : 1.5rem;
+    font-weight: 400;
+  }
+
+  @supports (backdrop-filter: blur(10px)) {
+
+    .navListContainer:focus .navMenu,
+    .navListContainer:focus-within .navMenu {
+      background-color: $transparent_black;
+      backdrop-filter : blur(10px);
+    }
+  }
+
+  .navListContainer:focus .navHamburger,
+  .navListContainer:focus-within .navHamburger {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .navListContainer:focus+.navHamburgerclose,
+  .navListContainer:focus-within+.navHamburgerclose {
+    display: flex;
+    opacity: 1;
+    z-index: 1;
+  }
+}

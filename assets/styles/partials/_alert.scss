@@ -1,0 +1,19 @@
+@import "../params/variables.scss";
+
+.alert {
+  display         : flex;
+  flex-direction  : row;
+  align-items     : center;
+  box-shadow      : $box_shadow;
+  padding         : 1rem;
+  width           : 50%;
+  margin          : 1rem auto;
+  border-radius   : 5px;
+
+  div {
+    padding: 0 0.5rem;
+  }
+}
+.danger {
+  background-color: $red;
+}

@@ -1,0 +1,38 @@
+@import "../params/_variables.scss";
+
+.containerCard {
+  width          : 90%;
+  margin         : auto;
+  display        : flex;
+  flex-direction : row;
+  flex-wrap      : wrap;
+  justify-content: space-evenly;
+  align-content  : stretch;
+  align-items    : center;
+
+  .cardContainer {
+    display       : flex;
+    align-content : stretch;
+    flex-direction: column;
+    align-items   : center;
+    max-width     : 300px;
+    margin        : 0.5rem;
+    padding       : 0;
+    text-align    : center;
+    text-transform: uppercase;
+
+    .cardImage {
+      padding: 1rem 0;
+
+      img {
+        border-radius: 5px;
+        box-shadow: $box_shadow;
+      }
+    }
+
+    .cardText {
+      padding  : 0.5rem 1rem;
+      font-size: small;
+    }
+  }
+}

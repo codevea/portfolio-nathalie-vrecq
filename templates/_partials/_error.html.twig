@@ -1,0 +1,18 @@
+<div class="lineBarre"></div>
+<section class="sectionBlack error">
+	<h3 class="ico">{{ ux_icon('fluent:error-circle-12-filled', {height: '22px', width: '22px'}) }}
+		&nbsp; Erreur
+		{{status_code}}</h3>
+	<div class="containerError">
+		<div>
+			Une erreur a été levée "{{status_text}}".<br><br>
+			<button type="submit" class="error">
+				<a href='{{ path('app_home') }}'>revenez à la page d'accueil</a>
+			</button>
+		</div>
+		<div>
+			<img src="{{ asset('./pictures/contact.webp') }}" alt="Représente un ordinateur vintage avec un effet de mosaïque.">
+		</div>
+	</section>
+</div>
+<div class="lineBarre"></div>

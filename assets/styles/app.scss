@@ -1,0 +1,104 @@
+@use "params/_minireset.scss";
+@use "params/_title.scss";
+@use "params/_form.scss";
+@use "params/_card.scss";
+
+@use "base/_header.scss";
+@use "base/_navone.scss";
+@use "base/_footer.scss";
+
+@use "partials/_about.scss";
+@use "partials/_timeline.scss";
+@use "partials/_skill.scss";
+@use "partials/_contact.scss";
+@use "partials/_error.scss";
+@use "partials/_alert.scss";
+@use "partials/_password.scss";
+
+@use "pages/project.scss";
+@use "pages/monitoring.scss";
+
+@import "params/_variables.scss";
+
+
+html,
+body {
+  max-width       : 1600px;
+  background-color: $white;
+  height          : auto;
+  margin          : 0 auto;
+  padding         : 0;
+  font-size       : medium;
+  font-family     : "Roboto Serif", serif;
+  font-style      : normal;
+  text-align      : justify;
+  line-height     : 1.5em;
+  color           : $black;
+  font-weight     : 200;
+}
+
+.lineBarre {
+  width              : 100%;
+  margin             : 0 auto;
+  height             : 5px;
+  background-image   : url("../pictures/bar.webp");
+  background-repeat  : repeat;
+  background-position: center;
+}
+
+.lineBarreDeux {
+  width              : 100%;
+  margin             : 0 auto;
+  height             : 3px;
+  background-image   : url("../pictures/bar.webp");
+  background-repeat  : no-repeat;
+  background-position: center;
+}
+
+.sectionWhite {
+  color  : $black;
+  padding: 2rem 1rem;
+  width  : 100%;
+  margin : 0 auto;
+}
+
+.sectionBlack {
+  background-color: $black;
+  color           : $white;
+  padding         : 2rem 1rem;
+  width           : 100%;
+  margin          : 0 auto;
+  box-shadow      : $box_shadow;
+}
+
+.ico {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+}
+
+.scale > img:hover{
+	transition: all 0.6s ease;
+	transform: scale(1.1);
+	opacity: 1;
+	cursor: pointer;
+}
+
+.TextEndColorOr {
+  color      : $or;
+  margin     : 0.5rem 0 1rem 0;
+  text-align : end;
+  text-shadow: 2px 2px 2px $white_inter;
+}
+
+a {
+  color          : $white;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color          : $blue_light;
+    transition     : 0.6s ease-in-out;
+  }
+}

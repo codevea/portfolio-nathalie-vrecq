@@ -1,0 +1,82 @@
+@import "../params/variables.scss";
+
+.containerAbout {
+  width  : 100%;
+  margin : 0 auto;
+  padding: 2rem 1rem;
+
+  .divText {
+    width     : 100%;
+    padding   : 2rem 0px;
+    text-align: justify;
+    margin    : 0 auto;
+  }
+
+  .divImage {
+    max-width: 350px;
+    margin   : 0 auto;
+    padding  : 0px 1rem;
+
+    img {
+      max-width    : 350px;
+      width        : 100%;
+      height       : auto;
+      margin       : 0 auto;
+      border-radius: 100%;
+      padding      : 1rem 0.5rem 2rem 3rem;
+      box-shadow   : $box_shadow_blue_pencil;
+    }
+  }
+}
+
+.icon {
+  width     : 100%;
+  text-align: end;
+  font-size : xx-large;
+  padding: 1rem 0;
+
+  i {
+    color: $blue;
+
+    &:hover {
+      color     : $blue_pencil;
+      transition: 0.6s ease-in-out;
+    }
+  }
+}
+
+.messageAbout {
+  padding         : 0.8rem;
+  background-color: $or;
+  border-radius   : 5px;
+  margin          : 0 0 2rem 0;
+  font-weight     : 400;
+  color           : $black;
+  text-transform  : uppercase;
+  box-shadow      : $box_shadow;
+
+  a {
+    color: $blue;
+
+    &:hover {
+      color: $blue_pencil;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+
+  .containerAbout {
+    display        : flex;
+    justify-content: center;
+    flex-direction : row;
+    flex-wrap      : nowrap;
+    align-items    : stretch;
+    width          : 90%;
+
+    .divText {
+      padding: 2rem;
+    }
+  }
+
+}

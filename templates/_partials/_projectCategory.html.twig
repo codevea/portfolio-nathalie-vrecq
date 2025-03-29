@@ -1,0 +1,28 @@
+<div class="flip-card">
+	<div class="flip-card-inner">
+		<div class="flip-card-front">
+			<picture>
+				<source srcset="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('card_webp') }}" type="image/webp">
+				<source srcset="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('card_jpeg') }}" type="image/jpeg">
+				<img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('card_webp') }}" alt="{{project.title}}">
+			</picture>
+		</div>
+		<div class="flip-card-back">
+			<h3>{{ project.title }}</h3>
+			<a href="{{ project.url }}" target="_blank">{{ project.url }}</a>
+			<div>
+				{{ project.content }}
+				<div>
+				{% if project.technology is not empty %}
+					<h4>Thecnologies, animation et gestion des cookies</h4>
+				{% endif %}
+					<ul>
+						{% for technology in project.technology %}
+							<li>{{technology.name}}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

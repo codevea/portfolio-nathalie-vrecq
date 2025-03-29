@@ -1,0 +1,16 @@
+<div class="containerAbout">
+  <div class="divText">
+    <div class="messageAbout">
+      {{setting.messageabout|default('')|raw}}
+    </div>
+    {{setting.content|default('')|raw }}
+    <div class="icon">
+      <a href="{{setting.linkedin|default('')}}" target="_blank">{{ ux_icon('akar-icons:linkedinv1-fill', {height: '26px', width: '26px'}) }}</i></a>
+      <a href="{{setting.github|default('')}}" target="_blank">{{ ux_icon('fa6-brands:square-github', {height: '26px', width: '26px'}) }}</a>
+      <a href="{{setting.facebook|default('')}}" target="_blank">{{ ux_icon('fa-brands:facebook-square', {height: '26px', width: '26px'}) }}</a>
+    </div>
+  </div>
+  <div class="divImage">
+    <img src="{{asset('pictures/profil.webp')}}" alt="photo de profil">
+  </div>
+</div>

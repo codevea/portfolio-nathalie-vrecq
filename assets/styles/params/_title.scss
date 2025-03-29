@@ -1,0 +1,32 @@
+@import "../params/_variables.scss";
+
+h1,
+h2 {
+  font-size     : large;
+  font-weight   : 300;
+  line-height   : 1.8em;
+  padding       : 0 1rem;
+  text-transform: uppercase;
+  text-shadow   : 2px 2px 2px $black;
+}
+
+h3 {
+  color         : $blue_pencil;
+  font-weight   : 400;
+  line-height   : 1.8em;
+  font-size     : medium;
+  text-transform: uppercase;
+  text-align: start;
+  margin        : 0 auto;
+  width         : 100%;
+}
+
+h4 {
+  font-size     : medium;
+  text-transform: capitalize;
+  font-weight   : 300;
+  text-align: start;
+  line-height     : 1.8em;
+  padding       : 0;
+  margin        : 0 auto;
+}

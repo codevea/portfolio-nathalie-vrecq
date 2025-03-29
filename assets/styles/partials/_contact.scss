@@ -1,0 +1,74 @@
+@import "../params/variables.scss";
+
+.containerContact {
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  margin         : 0 auto;
+  padding        : 2rem;
+  width          : 100%;
+
+  div {
+    padding    : 0;
+    width      : 100%;
+    margin     : 1rem;
+    display    : flex;
+    align-items: center;
+  }
+}
+
+.containerInformationContact {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  width          : 50%;
+
+  img {
+    width        : 80%;
+    opacity      : 0.8;
+    border-radius: 100%;
+    padding      : 1rem 0.5rem 2rem 3rem;
+  }
+}
+
+.containerFormContact {
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  align-items     : center;
+  text-align      : center;
+  border          : $black 5px solid;
+  border-radius   : 10px;
+  text-transform  : uppercase;
+  font-size       : medium;
+  color           : $white;
+  font-weight     : 400;
+  margin          : 0 auto;
+  padding         : 1rem;
+  background-color: $transparent_violet;
+  height          : 350px;
+  box-shadow      : $box_shadow;
+
+  p {
+    padding: 1rem 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .containerContact {
+    flex-direction: row;
+    flex-wrap     : nowrap;
+    width         : 90%;
+
+    div {
+      width: 40%;
+    }
+    
+    .containerInformationContact {
+      padding        : 1rem;
+      justify-content: space-around;
+      align-items    : center;
+    }
+  }
+}

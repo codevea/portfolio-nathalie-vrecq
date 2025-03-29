@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+{% block title "Connexion" %}
+
+{% block body %}	
+<section class="sectionBlack">
+  <h2 class="ico">{{ ux_icon('icon-park-solid:setting-computer', {height: '22px', width: '22px'}) }}&nbsp; Connexion</h2>
+
+    {% if error %}
+      <div class="alert danger ico">
+       <div> {{ ux_icon('line-md:alert-twotone', {height: '22px', width: '22px'}) }} </div>
+       <div> {{ error.messageKey|trans(error.messageData, 'security') }}</div>
+      </div>
+    {% endif %}
+
+<div class="form">   
+  <form method="post">
+    {% if app.user %}
+      <div>
+        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+      </div>
+    {% endif %}
+    <h2 class="h3 mb-3 font-weight-normal">Formulaire de connexion</h2>
+    <div>
+    
+    <div>
+    <label for="username">E-mail</label>
+    <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
+    </div>
+
+    <div>
+    <label for="password">Mot de passe</label>
+    <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
+    </div>
+    
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+    <div class="checkboxRemenber">
+      <input type="checkbox" name="_remember_me" id="_remember_me">
+      <label for="_remember_me">Se souvenir de moi</label>
+    </div>
+   
+   <button type="submit">Connexion</button>
+   <div class="linkPasswordReinitialization">
+   <a href="{{ path('app_forgot_password_request')}}">Mot de passe oublié ?</a>
+   </div>
+   </div>
+
+  </form>
+  </div>
+</section>
+<div class="lineBarre"></div>
+{% endblock %}

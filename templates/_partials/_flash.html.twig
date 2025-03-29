@@ -1,0 +1,10 @@
+{% for type, messages in app.flashes %}
+	<div class="alert {{type}} ico">
+		<div>
+			{{ ux_icon('line-md:alert-twotone', {height: '22px', width: '22px'}) }}
+		</div>
+		<div>
+			{{ message | join('. ')}}
+		</div>
+	</div>
+{% endfor %}
