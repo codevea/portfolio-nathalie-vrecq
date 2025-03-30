@@ -11,20 +11,31 @@ Création d'un portfolio dans la cadre des études du ***BTS SIO Option SLAM*** 
 ![Copie d'ecran](public/pictures/portfolio-readme.webp)
 
 
-## Versions:
+## Versions :
 
 |                |*Description*|*Tehcnologies*|
 |----------------|----------------|----------------|
 |Version : 1|`One-page statique`|Html, SASS/CSS, PHP - JavaScript|
 |Version : 2|`Application Symfony 7.2`||
 
-### Bundle
+### Bundle :
 
 * Gestion des images
     * VichUploaderBundle
     * LiipImagineBundle
 * Administration
     *  EasyAdminBundle
+
+
+### Informations sur l'installation :
+
+* Modifiez les informations du fichier .env en entrant vos paramètres personnels.
+* Modifiez l'adresse email d'envoi dans le fichier ResetPasswordController.php (ligne 160, dans le namespace App\Controller).
+* Problèmes liés aux jetons CSRF invalides (Symfony 7.2) : Si vous rencontrez un problème de jeton CSRF invalide, recompilez les assets avec la commande suivante :
+
+```bash
+php bin/console asset-map:compile
+```
 
 
 ## Licence
