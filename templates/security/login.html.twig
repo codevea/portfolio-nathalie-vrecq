@@ -32,7 +32,8 @@
     <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
     </div>
     
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+     <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
+
 
     <div class="checkboxRemenber">
       <input type="checkbox" name="_remember_me" id="_remember_me">
